@@ -2,8 +2,6 @@ import {createContext, useState} from "react"
 
 let initialUser = {
     name: "",
-    email: "",
-    password: ""
 }
 
 export const UserContext = createContext(initialUser)
@@ -19,4 +17,5 @@ export function UserProvider({children}: {children: React.ReactNode}){
     )
 
 }
+
 

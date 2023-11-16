@@ -4,6 +4,8 @@ export default function Product({ products }: { products: any }) {
 
     return (
             <>
+                <Link href={"/store"}>Volver...</Link>
+
                 <h1 className="mt-6 mb-3">Productos</h1>
                 {
                     products.map((product: any) => (

@@ -1,11 +1,13 @@
 "use client"
 import { useRef, FormEvent } from "react"
+import { useRouter } from "next/router"
 
 export default function RegisterLogin() {
     const nameRef = useRef(null)
     const passwordRef = useRef(null)
     const emailRef = useRef(null)
 
+    const router = useRouter()
 
     async function enviarDatos(evento: FormEvent) {
         evento.preventDefault()
@@ -32,6 +34,7 @@ export default function RegisterLogin() {
         }else{
             const mensaje = await respuesta.json()
             alert(mensaje.msg)
+            router.push("/auth/login")
         }
 
     }

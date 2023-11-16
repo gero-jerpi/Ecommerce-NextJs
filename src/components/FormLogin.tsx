@@ -1,6 +1,7 @@
 "use client"
 import { useRef, FormEvent, useContext } from "react"
 import { UserContext } from "@/context/UserContext"
+import { useRouter } from "next/router";
 
 export default function FormLogin() {
 
@@ -9,6 +10,8 @@ export default function FormLogin() {
 
     const nameRef = useRef(null)
     const passwordRef = useRef(null)
+
+    const router = useRouter()
 
     async function enviarDatos(evento: FormEvent) {
         evento.preventDefault()
@@ -34,8 +37,8 @@ export default function FormLogin() {
             const mensaje = await respuesta.json()
             //@ts-ignore
             setUser({...user, name: nameRef.current?.value})
-
             alert(mensaje.msg)
+            router.push("/")
         }
 
     }

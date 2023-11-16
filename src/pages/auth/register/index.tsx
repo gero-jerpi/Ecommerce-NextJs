@@ -1,7 +1,7 @@
-import RegisterLogin from "@/components/RegisterLogin";
+import FormRegister from "@/components/FormRegister";
 
 export default function Register(){
     return (
-        <RegisterLogin/>
+        <FormRegister/>
     )
 }
